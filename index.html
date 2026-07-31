@@ -3,184 +3,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dillon Singh — Data Science & Analytics</title>
-<meta name="description" content="Dillon Singh — analytics professional and data scientist. 7 years of customer and revenue analytics at AT&T and Level Blue; M.S. in Data Science (AI specialization), Northwestern, December 2026.">
+<title>Dillon Singh</title>
+<meta name="description" content="Dillon Singh — data science & business analytics. Founder of StatusTix. M.S. Data Science (AI specialization), Northwestern, December 2026.">
 <style>
 :root {
   --bg: #F7F8FA; --ink: #182028; --muted: #5B6773; --line: #DFE4E9;
-  --card: #FFFFFF; --accent: #23558C; --accent-soft: #E7EEF6; --chip: #EEF1F4;
+  --card: #FFFFFF; --accent: #23558C; --accent-ink: #FFFFFF;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #12161B; --ink: #E7EBEF; --muted: #93A0AC; --line: #2A323B;
-    --card: #191F26; --accent: #7BA9D9; --accent-soft: #1D2A38; --chip: #222A33;
-  }
+  :root { --bg: #12161B; --ink: #E7EBEF; --muted: #93A0AC; --line: #2A323B; --card: #191F26; --accent: #7BA9D9; --accent-ink: #10151A; }
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
-  margin: 0; background: var(--bg); color: var(--ink);
+  margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  display: flex; align-items: center; justify-content: center; padding: 32px 20px;
 }
-main { max-width: 840px; margin: 0 auto; padding: 0 22px 72px; }
-a { color: var(--accent); text-decoration: none; }
-a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
-header.hero { padding: 72px 0 36px; border-bottom: 1px solid var(--line); }
-.kicker {
-  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--accent); margin: 0 0 12px;
+.card {
+  width: 100%; max-width: 480px; text-align: center;
 }
-h1 { font-size: 2.5rem; line-height: 1.12; margin: 0 0 14px; letter-spacing: -0.01em; text-wrap: balance; }
-.lede { font-size: 1.08rem; color: var(--muted); max-width: 62ch; margin: 0 0 22px; }
-.links { display: flex; flex-wrap: wrap; gap: 10px; }
-.links a {
-  display: inline-block; padding: 7px 15px; border: 1px solid var(--line);
-  border-radius: 999px; font-size: 0.88rem; font-weight: 600; color: var(--ink); background: var(--card);
+.avatar {
+  width: 128px; height: 128px; border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--line); display: block; margin: 0 auto 18px;
 }
-.links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.links a.primary:hover { text-decoration: none; opacity: 0.92; }
-section { padding: 40px 0 6px; }
-h2 { font-size: 1.05rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; font-weight: 700; }
-h3 { font-size: 1.06rem; margin: 0; }
-.now {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 24px;
+.avatar-fallback {
+  width: 128px; height: 128px; border-radius: 50%; margin: 0 auto 18px;
+  background: var(--accent); color: var(--accent-ink);
+  display: none; align-items: center; justify-content: center;
+  font-size: 2.6rem; font-weight: 700; letter-spacing: 0.02em;
 }
-.now div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 13px 16px; font-size: 0.9rem; }
-.now b { display: block; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 3px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
-.card p { margin: 8px 0 0; font-size: 0.92rem; color: var(--muted); }
-.tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
-.tags span { background: var(--chip); border-radius: 5px; padding: 2px 9px; font-size: 0.75rem; font-weight: 600; }
-.soon { border-style: dashed; }
-.soon .badge {
-  display: inline-block; background: var(--accent-soft); color: var(--accent);
-  font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; margin-bottom: 8px;
+h1 { font-size: 1.8rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+.tag { color: var(--muted); font-size: 0.95rem; line-height: 1.5; margin: 0 auto 26px; max-width: 40ch; }
+.buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 26px; }
+.buttons a {
+  display: block; padding: 14px 18px; border-radius: 12px;
+  background: var(--card); border: 1px solid var(--line);
+  color: var(--ink); font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  transition: transform 0.08s ease, border-color 0.08s ease;
 }
-.job { padding: 18px 0; border-bottom: 1px solid var(--line); }
-.job:last-child { border-bottom: none; }
-.job .meta { color: var(--muted); font-size: 0.86rem; margin: 2px 0 8px; }
-.job ul { margin: 0; padding-left: 20px; font-size: 0.93rem; }
-.job li { margin-bottom: 5px; }
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-.skills .card { padding: 14px 18px; }
-.skills b { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.skills p { margin: 6px 0 0; font-size: 0.9rem; }
-footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 20px; color: var(--muted); font-size: 0.85rem; }
-@media (max-width: 540px) { h1 { font-size: 1.9rem; } header.hero { padding-top: 48px; } }
+.buttons a:hover, .buttons a:focus-visible { border-color: var(--accent); transform: translateY(-1px); }
+.buttons a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.buttons a.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.buttons a span { display: block; font-weight: 400; font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+.buttons a.primary span { color: var(--accent-ink); opacity: 0.75; }
+footer { color: var(--muted); font-size: 0.8rem; }
+footer a { color: var(--accent); text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .buttons a { transition: none; } }
 </style>
 </head>
 <body>
-<main>
+<main class="card">
 
-<header class="hero">
-  <p class="kicker">Data Science · Business Intelligence · Marketing Analytics</p>
+  <!-- PLACEHOLDER: drop a square photo named profile.jpg into this repo's root.
+       Until then, the "DS" initials circle shows automatically. -->
+  <img class="avatar" src="profile.jpg" alt="Dillon Singh"
+       onerror="this.style.display='none'; document.getElementById('af').style.display='flex';">
+  <div class="avatar-fallback" id="af" aria-hidden="true">DS</div>
+
   <h1>Dillon Singh</h1>
-  <p class="lede">Seven years turning customer, revenue, and campaign data into executive decisions at AT&amp;T and Level Blue — now completing an M.S. in Data Science with an Artificial Intelligence specialization at Northwestern (December 2026). I build churn, forecasting, and segmentation models, the dashboards leadership actually uses, and — as founder and sole developer of StatusTix — shipped consumer software with a fully instrumented analytics stack.</p>
-  <div class="links">
-    <a class="primary" href="mailto:dillonsingh26.26@gmail.com">Email me</a>
-    <a href="resume.html">Resume</a>
-    <a href="https://github.com/dillonsingh26">GitHub</a>
-    <a href="#statustix">StatusTix</a>
-    <!-- At App Store launch, change the StatusTix href above to the App Store URL -->
-    <!-- Add your LinkedIn: <a href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn</a> -->
-  </div>
-  <div class="now">
-    <div><b>Currently</b>Lead Financial Analyst, Level Blue · Founder, StatusTix</div>
-    <div><b>Graduating</b>M.S. Data Science — AI specialization, Northwestern · Dec 2026</div>
-    <div><b>Based in</b>New York, NY — open to relocation</div>
-  </div>
-</header>
+  <p class="tag">Data science &amp; business analytics · Founder of StatusTix · M.S. Data Science (AI specialization), Northwestern — Dec 2026 · New York, NY</p>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="cards">
-    <div class="card" id="statustix">
-      <h3>StatusTix — Founder &amp; Sole Developer</h3>
-      <p>Shipped iOS app building a verified cross-league fan-attendance graph — 27 leagues, 2,600+ teams, 2,500+ venues. Photo-based game detection from EXIF GPS, ESPN/BallDontLie data integrations, full product funnel instrumented in Mixpanel, 489 automated tests, Firebase + Sentry + CI/CD.</p>
-      <div class="tags"><span>TypeScript</span><span>Firebase</span><span>Mixpanel</span><span>Product analytics</span></div>
-    </div>
-    <div class="card">
-      <h3>Chicago Bulls Franchise Valuation</h3>
-      <p>Five-year valuation and trade-impact forecast integrating brand asset worth, player statistics, salary, and sales data — benchmarked against comparable NBA franchises.</p>
-      <div class="tags"><span>Forecasting</span><span>Financial modeling</span><span>Python</span></div>
-    </div>
-    <div class="card">
-      <h3>Semantic Search for Campaign Teams</h3>
-      <p>Benchmarked AI models and built a semantic search pipeline on a Milvus vector database with OpenAI embeddings — automated issue tagging and improved retrieval accuracy 35%.</p>
-      <div class="tags"><span>OpenAI API</span><span>Milvus</span><span>NLP</span></div>
-    </div>
-    <div class="card">
-      <h3>Natural-Language Data Assistant</h3>
-      <p>An OpenAI-powered assistant that converts plain English into SQL queries and API calls, retrieving and transforming real-time data.</p>
-      <div class="tags"><span>LLMs</span><span>SQL generation</span><span>Python</span></div>
-    </div>
-    <div class="card soon">
-      <span class="badge">Shipping Sep 2026</span>
-      <h3>Retention Uplift Engine</h3>
-      <p>Causal uplift modeling on 13.9M randomized ad-exposure records — Qini-evaluated targeting policies and an interactive spend simulator.</p>
-      <div class="tags"><span>Causal inference</span><span>LightGBM</span><span>Streamlit</span></div>
-    </div>
-    <div class="card soon">
-      <span class="badge">Shipping Fall 2026</span>
-      <h3>Ticket Price Intelligence</h3>
-      <p>Automated daily pipeline tracking NBA/NFL secondary-market prices — price-decay modeling and an executive Tableau dashboard.</p>
-      <div class="tags"><span>APIs</span><span>dbt</span><span>Tableau</span></div>
-    </div>
+  <div class="buttons">
+    <a class="primary" href="resume.html">Resume<span>View or save as PDF</span></a>
+    <a href="portfolio.html">Portfolio<span>Projects, experience, skills</span></a>
+    <a href="https://github.com/dillonsingh26">GitHub<span>Code &amp; project repos</span></a>
+    <a href="portfolio.html#statustix">StatusTix<span>Fan-attendance iOS app — App Store soon</span></a>
+    <!-- At App Store launch, change the StatusTix href above to the App Store URL
+         and the span text to "Download on the App Store" -->
+    <!-- PLACEHOLDER: uncomment and set your LinkedIn handle
+    <a href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn<span>Connect with me</span></a>
+    -->
+    <a href="mailto:dillonsingh26.26@gmail.com">Email<span>dillonsingh26.26@gmail.com</span></a>
   </div>
-</section>
 
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="job">
-    <h3>Level Blue — Lead Financial Analyst, Product Management &amp; Development</h3>
-    <p class="meta">Cybersecurity &amp; managed security services · 2024–present</p>
-    <ul>
-      <li>Scenario-based cohort models of retention, churn, and cross-sell projecting a $2.5M annual revenue uplift</li>
-      <li>Customer data enrichment program unifying disparate systems into one analytics warehouse — forecast accuracy up ~20%</li>
-      <li>Python ETL pipelines eliminating 1,000+ manual hours and $100K in projected third-party costs annually</li>
-    </ul>
-  </div>
-  <div class="job">
-    <h3>AT&amp;T — Lead Financial Analyst · Financial Analyst</h3>
-    <p class="meta">2019–2024 · Finance Leadership Program graduate</p>
-    <ul>
-      <li>Campaign and cross-sell analytics behind a targeted 5% YoY churn reduction and 15% cross-sell conversion lift</li>
-      <li>Predictive retention dashboard surfacing early churn signals across markets and segments</li>
-      <li>Centralized LTV / churn / ARPU dashboard used by senior marketing leadership for quarterly investment decisions</li>
-      <li>Dynamic pricing models evaluating product profitability and value drivers</li>
-    </ul>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="card"><b>Data &amp; programming</b><p>SQL (PostgreSQL, Snowflake) · Python (Pandas, NumPy) · R · Git</p></div>
-    <div class="card"><b>Visualization &amp; BI</b><p>Tableau · Power BI · Streamlit · Seaborn · advanced Excel modeling</p></div>
-    <div class="card"><b>Methods</b><p>Forecasting · churn &amp; cohort analysis · segmentation · LTV · dynamic pricing</p></div>
-    <div class="card"><b>AI &amp; ML</b><p>OpenAI API · semantic search &amp; vector databases (Milvus) · NLP</p></div>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="job">
-    <h3>Northwestern University — M.S. in Data Science, Artificial Intelligence specialization</h3>
-    <p class="meta">December 2026 · Applied Statistics · Practical Machine Learning · AI &amp; Deep Learning · NLP · Database Systems</p>
-  </div>
-  <div class="job">
-    <h3>University of South Carolina — B.S. Business Administration</h3>
-    <p class="meta">Darla Moore School of Business · Marketing &amp; Risk Management, Business Analytics</p>
-  </div>
-</section>
-
-<footer>
-  <p>Dillon Singh · New York, NY · <a href="mailto:dillonsingh26.26@gmail.com">dillonsingh26.26@gmail.com</a> · <a href="https://github.com/dillonsingh26">github.com/dillonsingh26</a></p>
-</footer>
+  <footer><a href="portfolio.html">dillonsingh26.github.io</a> · New York, NY</footer>
 
 </main>
 </body>
